@@ -5,6 +5,8 @@ metadata:
   namespace: staging
 spec:
   interval: 10m
+  driftDetection:
+    mode: enabled
   chart:
     spec:
       chart: ./charts/redmine
