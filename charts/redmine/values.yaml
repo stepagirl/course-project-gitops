@@ -1,0 +1,33 @@
+image:
+  repository: redmine
+  tag: "6"
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  className: traefik
+  host: redmine.local
+  tls:
+    enabled: false
+    secretName: redmine-tls
+
+database:
+  host: redmine-db-rw
+  name: redmine
+  user: redmine
+  existingSecret: redmine-db-app
+  passwordKey: password
+
+resources: {}
+
+hpa:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
