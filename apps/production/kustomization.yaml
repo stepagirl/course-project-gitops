@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - postgres-cluster.yaml
   - redmine-helmrelease.yaml
+  - redmine-tls-secret.yaml
