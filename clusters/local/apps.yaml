@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  wait: true
+  wait: false
   dependsOn:
     - name: infrastructure
 ---
@@ -26,6 +26,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  wait: true
+  wait: false
   dependsOn:
     - name: infrastructure
