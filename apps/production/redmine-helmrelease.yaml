@@ -13,6 +13,8 @@ spec:
         name: flux-system
         namespace: flux-system
   values:
+    redmine:
+      siteName: "Redmine Production"
     replicaCount: 2
     ingress:
       enabled: true

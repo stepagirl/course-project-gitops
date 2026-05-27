@@ -38,5 +38,7 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.database.existingSecret }}
                   key: password
+            - name: REDMINE_SITENAME
+              value: {{ .Values.redmine.siteName | quote }}
           resources:
 {{- toYaml .Values.resources | nindent 12 }}
