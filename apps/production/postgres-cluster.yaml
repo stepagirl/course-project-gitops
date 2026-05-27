@@ -1,0 +1,20 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: redmine-db
+  namespace: production
+spec:
+  instances: 2
+  storage:
+    size: 2Gi
+  bootstrap:
+    initdb:
+      database: redmine
+      owner: redmine
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "250m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
